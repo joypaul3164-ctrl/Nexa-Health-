@@ -18,8 +18,8 @@ jobs:
   build-apk:
     runs-on: ubuntu-latest
     env:
-      ANDROID_HOME: ${{ runner.temp }}/android-sdk
-      ANDROID_SDK_ROOT: ${{ runner.temp }}/android-sdk
+      ANDROID_HOME: /home/runner/android-sdk
+      ANDROID_SDK_ROOT: /home/runner/android-sdk
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
