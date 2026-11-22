@@ -1,75 +1,67 @@
 <!doctype html>
-<html lang="en">
+<html lang="bn">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#071d1a"><meta name="description" content="Nexa Health — private symptom journal and evidence-informed wellbeing guidance.">
-<link rel="manifest" href="./manifest.webmanifest"><title>Nexa Health</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071d1a">
+<meta name="description" content="Nexa Health — ব্যথা সম্পর্কে সাধারণ তথ্য ও নিরাপদ ব্যায়াম নির্দেশনা।">
+<link rel="manifest" href="./manifest.webmanifest">
+<title>Nexa Health</title>
 <style>
-:root{color-scheme:dark;--bg:#071d1a;--panel:#102b26;--panel2:#15362f;--mint:#8ce6c2;--text:#f0fbf6;--muted:#a7c4b9;--line:#24483e;--danger:#ffb6a8}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#1b5143 0,transparent 45%),var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{max-width:980px;margin:auto;padding:20px 16px 100px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:28px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#9df2cd,#39a982);display:grid;place-items:center;color:#08251d;font-size:24px;font-weight:900}.pill,.secondary,.primary,.tab{border:1px solid var(--line);border-radius:14px;padding:10px 14px;background:var(--panel);color:var(--text)}.primary{background:linear-gradient(135deg,#9af0c9,#4dbb91);color:#06241a;border:0;font-weight:800}.primary:disabled{opacity:.5}.hero{padding:24px;border:1px solid #2b594c;border-radius:26px;background:linear-gradient(135deg,#153d32,#0c2923 70%);margin-bottom:18px}.eyebrow{color:var(--mint);font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.hero h1{font-size:clamp(28px,6vw,44px);line-height:1.1;margin:8px 0}.hero p,.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:18px;margin-bottom:14px}.card h2,.card h3{margin:0 0 10px}.field{display:grid;gap:6px;margin:12px 0}.field label{font-size:13px;color:var(--muted)}input,select,textarea{width:100%;padding:13px;border-radius:13px;border:1px solid var(--line);background:#081f1b;color:var(--text);outline:none}textarea{min-height:90px;resize:vertical}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.tabs{display:flex;gap:8px;overflow:auto;margin:18px 0}.tab.active{background:#245b49;border-color:#5bc59a;color:white}.hidden{display:none!important}.notice{border-left:3px solid var(--mint);background:#0d2923;padding:12px 14px;border-radius:10px;color:var(--muted);font-size:13px;margin:14px 0}.alert{border-left:3px solid var(--danger);background:#321e1c;padding:13px;border-radius:10px;color:#ffe2dc;font-size:13px;margin:14px 0}.stat{font-size:28px;font-weight:800;color:var(--mint)}.item{padding:12px 0;border-bottom:1px solid var(--line)}.item:last-child{border:0}.tag{display:inline-block;background:#1d493c;color:var(--mint);border-radius:99px;padding:4px 9px;font-size:12px}.foot{font-size:12px;color:var(--muted);text-align:center;margin-top:25px}.auth{max-width:460px;margin:5vh auto}.small{font-size:12px}.good{color:var(--mint)}@media(max-width:650px){.grid{grid-template-columns:1fr}.wrap{padding:14px 13px 90px}.hero{padding:20px}.top{margin-bottom:18px}}
+:root{color-scheme:dark;--bg:#071d1a;--panel:#102b26;--panel2:#15362f;--mint:#8ce6c2;--text:#f0fbf6;--muted:#a7c4b9;--line:#24483e;--danger:#ffb6a8}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#1b5143 0,transparent 45%),var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Noto Sans Bengali",sans-serif;min-height:100vh}.wrap{width:100%;max-width:620px;margin:auto;padding:14px 13px calc(35px + env(safe-area-inset-bottom))}.top{display:flex;align-items:center;gap:12px;margin:4px 0 20px}.logo{width:44px;height:44px;flex:none;border-radius:15px;background:linear-gradient(135deg,#9df2cd,#39a982);display:grid;place-items:center;color:#08251d;font-size:25px;font-weight:900}.brand{font-weight:850;letter-spacing:.3px}.sub{font-size:12px;color:var(--muted);font-weight:400}.hero{padding:23px 20px;border:1px solid #2b594c;border-radius:25px;background:linear-gradient(135deg,#153d32,#0c2923 75%);margin-bottom:15px}.eyebrow{color:var(--mint);font-size:11px;font-weight:800;letter-spacing:1.4px}.hero h1{font-size:30px;line-height:1.2;margin:8px 0}.muted{color:var(--muted)}.card{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:21px;padding:17px;margin:13px 0}.card h2{font-size:20px;margin:0 0 7px}.field{display:grid;gap:7px;margin:14px 0}.field label{font-size:14px;color:var(--muted)}select,input,textarea{width:100%;padding:14px;border-radius:13px;border:1px solid var(--line);background:#081f1b;color:var(--text);font:inherit;outline:none}select:focus,input:focus,textarea:focus{border-color:var(--mint)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.choice{display:block;padding:12px 9px;border:1px solid var(--line);border-radius:13px;background:#0b241f;color:var(--text);text-align:center;font:inherit}.choice.selected{border-color:var(--mint);background:#1c493b}.primary{width:100%;border:0;border-radius:14px;padding:15px;background:linear-gradient(135deg,#9af0c9,#4dbb91);color:#06241a;font:inherit;font-weight:850;margin-top:9px}.notice{border-left:3px solid var(--mint);background:#0d2923;padding:12px;border-radius:10px;color:var(--muted);font-size:13px;margin:13px 0}.alert{border-left:3px solid var(--danger);background:#321e1c;padding:12px;border-radius:10px;color:#ffe2dc;font-size:13px;margin:13px 0}.result{display:none}.result.show{display:block}.item{padding:12px 0;border-bottom:1px solid var(--line)}.item:last-child{border:0}.tag{display:inline-block;background:#1d493c;color:var(--mint);border-radius:99px;padding:4px 9px;font-size:12px}.foot{text-align:center;color:var(--muted);font-size:12px;margin:22px 0 5px}.hidden{display:none!important}@media(min-width:700px){body{background:var(--bg)}.wrap:after{content:"এই অ্যাপটি মোবাইল ব্যবহারের জন্য তৈরি";display:block;text-align:center;color:var(--muted);font-size:12px;margin-top:12px}}
 </style>
 </head>
-<body>
-<div class="wrap">
-<header class="top"><div class="brand"><div class="logo">✚</div><div>NEXA <span class="good">HEALTH</span><div class="small muted">Your wellbeing companion</div></div></div><div class="actions"><button class="pill" id="langBtn">বাংলা</button><button class="pill hidden" id="logoutBtn">Sign out</button></div></header>
-<section id="authView" class="auth card">
-<div class="eyebrow">PRIVATE HEALTH JOURNAL</div><h1 id="authTitle">Welcome back</h1><p class="muted" id="authSub">Sign in to keep your health notes private and synced.</p>
-<div class="field"><label>Email</label><input id="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
-<div class="field"><label>Password</label><input id="password" type="password" autocomplete="current-password" minlength="8" placeholder="Your password"></div>
-<div class="field hidden" id="nameField"><label>Display name</label><input id="displayName" maxlength="80" placeholder="Your name"></div>
-<div class="actions"><button class="primary" id="authBtn">Sign in</button><button class="secondary" id="switchAuth">Create account</button></div>
-<p class="small muted" id="authMsg" role="status"></p>
-<div class="notice">Your notes are tied to your signed-in account. Use a unique password and never share it.</div>
+<body><div class="wrap">
+<header class="top"><div class="logo">✚</div><div class="brand">NEXA <span style="color:var(--mint)">HEALTH</span><div class="sub">ব্যথা বুঝুন · নিরাপদ যত্নের তথ্য</div></div></header>
+<section class="hero"><div class="eyebrow">আপনার স্বাস্থ্য-সহায়ক</div><h1>ব্যথা কোথায় হচ্ছে?</h1><p class="muted">ব্যথার জায়গা ও ধরন নির্বাচন করুন। এরপর সাধারণ যত্নের তথ্য এবং নিরাপদ হালকা ব্যায়ামের পরামর্শ দেখুন।</p></section>
+<main>
+<section class="card" id="form">
+<h2>১. ব্যথার জায়গা বেছে নিন</h2>
+<div class="field"><label for="area">শরীরের কোন অংশে ব্যথা?</label><select id="area"><option value="">একটি অংশ নির্বাচন করুন</option><option>মাথা</option><option>ঘাড়</option><option>কাঁধ</option><option>হাত</option><option>কবজি</option><option>বুক</option><option>পেট</option><option>পিঠের ওপরের অংশ</option><option>কোমর / পিঠের নিচের অংশ</option><option>নিতম্ব</option><option>হাঁটু</option><option>পা</option><option>গোড়ালি</option><option>অন্যান্য</option></select></div>
+<div class="field"><label for="kind">ব্যথার ধরন কেমন?</label><select id="kind"><option value="">ব্যথার ধরন নির্বাচন করুন</option><option>চাপ চাপ ব্যথা</option><option>টনটনে ব্যথা</option><option>জ্বালাপোড়া</option><option>টান লাগার মতো</option><option>খোঁচা দেওয়ার মতো</option><option>নড়াচড়ায় ব্যথা বাড়ে</option><option>ঠিক বুঝতে পারছি না</option></select></div>
+<div class="field"><label for="duration">কতক্ষণ ধরে ব্যথা?</label><select id="duration"><option value="">সময় নির্বাচন করুন</option><option>এইমাত্র শুরু</option><option>কয়েক ঘণ্টা</option><option>১–২ দিন</option><option>৩–৭ দিন</option><option>এক সপ্তাহের বেশি</option><option>মাঝে মাঝে হয়</option></select></div>
+<div class="field"><label for="level">ব্যথার মাত্রা: <strong id="levelText">৩/১০</strong></label><input id="level" type="range" min="0" max="10" value="3"></div>
+<div class="field"><label for="extra">অন্য কোনো তথ্য? (ঐচ্ছিক)</label><textarea id="extra" rows="3" maxlength="500" placeholder="যেমন: হাঁটলে ব্যথা বাড়ে, খেলাধুলার পর শুরু হয়েছে..."></textarea></div>
+<button class="primary" id="showBtn">আমার জন্য তথ্য দেখাও</button>
 </section>
-<main id="appView" class="hidden">
-<section class="hero"><div class="eyebrow">A calmer way to track wellbeing</div><h1 id="hello">Hello there.</h1><p>Notice patterns, keep useful notes, and explore safe, general wellbeing information.</p><div class="actions"><button class="primary" data-tab="checkin">＋ New check-in</button><button class="secondary" data-tab="history">View history</button></div></section>
-<div class="alert"><strong>Important:</strong> Nexa Health does not diagnose conditions or replace a clinician. If symptoms are severe, sudden, rapidly worsening, or feel like an emergency, seek urgent medical help now.</div>
-<nav class="tabs"><button class="tab active" data-tab="home">Overview</button><button class="tab" data-tab="checkin">Check-in</button><button class="tab" data-tab="history">My history</button><button class="tab" data-tab="guidance">Wellbeing guide</button></nav>
-<section id="homePanel">
-<div class="grid"><div class="card"><div class="eyebrow">YOUR JOURNAL</div><div class="stat" id="totalCount">0</div><div class="muted">Saved check-ins</div></div><div class="card"><div class="eyebrow">LAST ENTRY</div><div class="stat" id="lastEntry">—</div><div class="muted">Keep notes over time</div></div></div>
-<div class="card"><h2>Start with what you notice</h2><p class="muted">Record a symptom, where you notice it, how strong it feels, and how long it has been happening. A journal can help you explain changes to a healthcare professional.</p><button class="primary" data-tab="checkin">Create a check-in</button></div>
-</section>
-<section id="checkinPanel" class="hidden">
-<div class="card"><h2>New symptom check-in</h2><p class="muted">This is a record, not a diagnosis.</p>
-<div class="field"><label>What are you noticing?</label><select id="symptom"><option value="">Choose a symptom</option><option>Headache</option><option>Stomach discomfort</option><option>Back discomfort</option><option>Joint discomfort</option><option>Muscle soreness</option><option>Cough</option><option>Feverish feeling</option><option>Fatigue</option><option>Other</option></select></div>
-<div class="field"><label>Where do you notice it?</label><input id="region" maxlength="80" placeholder="e.g. forehead, lower back, stomach"></div>
-<div class="field"><label>How strong does it feel? (0–10)</label><input id="severity" type="range" min="0" max="10" value="3"><div class="muted">Level: <strong id="sevValue">3</strong>/10</div></div>
-<div class="field"><label>How long?</label><select id="duration"><option>Just started</option><option>A few hours</option><option>1–2 days</option><option>3–7 days</option><option>More than a week</option><option>Comes and goes</option></select></div>
-<div class="field"><label>Anything else you want to note? (optional)</label><textarea id="notes" maxlength="2000" placeholder="What were you doing? What seems to make it better or worse?"></textarea></div>
-<div class="actions"><button class="primary" id="saveCheckin">Save check-in</button><button class="secondary" data-tab="home">Cancel</button></div><p class="small muted" id="checkinMsg" role="status"></p></div>
-</section>
-<section id="historyPanel" class="hidden"><div class="card"><h2>My check-ins</h2><div id="historyList" class="muted">Loading…</div></div></section>
-<section id="guidancePanel" class="hidden">
-<div class="card"><div class="eyebrow">GENERAL WELLBEING</div><h2>Small supportive steps</h2>
-<div class="item"><strong>Pause and observe</strong><p class="muted">Write down when a symptom began, what it feels like, and any changes. Avoid assuming a cause from one symptom.</p></div>
-<div class="item"><strong>Rest and hydration</strong><p class="muted">For everyday tiredness or mild discomfort, consider taking a comfortable break and drinking water if you can. Follow any advice already given by your clinician.</p></div>
-<div class="item"><strong>Gentle movement</strong><p class="muted">Only if it feels comfortable: try ordinary, gentle movement. Stop if it increases discomfort, causes dizziness, or feels unsafe. Do not push through pain.</p></div>
-<div class="item"><strong>Prepare for an appointment</strong><p class="muted">Bring your timeline, medicines/supplements list, relevant health history, and questions. A qualified clinician can assess your individual situation.</p></div>
-<div class="alert"><strong>Get urgent help</strong><br>Seek emergency assessment for trouble breathing, chest pain, fainting, new confusion, sudden severe headache, severe allergic reaction, major injury, or any rapidly worsening/severe symptom. This list is not exhaustive.</div>
-<p class="small muted">Information is general education, not personalized medical advice. No medication or treatment is prescribed by this app.</p>
-</div></section>
-</main>
-<footer class="foot">Nexa Health · Private journal · General information only</footer>
+<section class="card result" id="result" aria-live="polite"><div class="tag">আপনার নির্বাচনের ভিত্তিতে সাধারণ তথ্য</div><h2 id="resultTitle" style="margin-top:12px">যত্নের তথ্য</h2><p class="muted" id="summary"></p>
+<div class="item"><strong>🧘 হালকা নড়াচড়া ও ব্যায়াম</strong><p id="exercise" class="muted"></p></div>
+<div class="item"><strong>💊 ওষুধ সম্পর্কে</strong><p id="medicine" class="muted"></p></div>
+<div class="notice">ব্যায়ামে ব্যথা বাড়লে, মাথা ঘুরলে বা অস্বস্তি হলে সঙ্গে সঙ্গে থামুন। জোর করে কোনো ব্যায়াম করবেন না।</div>
+<button class="primary" id="againBtn">নতুন করে নির্বাচন করুন</button></section>
+<div class="alert"><strong>জরুরি সতর্কতা:</strong> বুকব্যথা, শ্বাসকষ্ট, অজ্ঞান হওয়া, হঠাৎ অত্যন্ত তীব্র মাথাব্যথা, বড় আঘাত, নতুন দুর্বলতা/অবশভাব, অথবা দ্রুত খারাপ হওয়া উপসর্গ হলে দ্রুত অভিভাবককে জানান এবং জরুরি চিকিৎসা নিন।</div>
+<div class="notice">Nexa Health রোগ নির্ণয় করে না এবং প্রেসক্রিপশন দেয় না। ওষুধ নেওয়ার আগে অভিভাবক ও চিকিৎসক/ফার্মাসিস্টের সঙ্গে কথা বলুন। বয়স, অ্যালার্জি, অন্য ওষুধ ও স্বাস্থ্য-অবস্থার ওপর ওষুধের নিরাপত্তা নির্ভর করে।</div>
+</main><footer class="foot">Nexa Health · শুধু সাধারণ স্বাস্থ্য-তথ্য · কোনো Login প্রয়োজন নেই</footer>
 </div>
-<script type="module">
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-const SUPABASE_URL='https://uvtlvbooesvqykzdkrww.supabase.co';
-const SUPABASE_KEY='sb_publishable_MTYUkq4KwgRoyvDmBeeu6Q_EKU2EFTU';
-const db=createClient(SUPABASE_URL,SUPABASE_KEY);
+<script>
 const $=id=>document.getElementById(id);
-let user=null,signup=false,language='en',entries=[];
-const msg=(id,t)=>$(id).textContent=t;
-function tab(name){['home','checkin','history','guidance'].forEach(x=>$(x+'Panel').classList.toggle('hidden',x!==name));document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.classList.contains('tab')&&b.dataset.tab===name));if(name==='history')loadHistory();}
-document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>tab(b.dataset.tab)));
-$('severity').addEventListener('input',()=>msg('sevValue',$('severity').value));
-$('switchAuth').addEventListener('click',()=>{signup=!signup;$('nameField').classList.toggle('hidden',!signup);$('authTitle').textContent=signup?'Create your account':'Welcome back';$('authSub').textContent=signup?'Create a private account for your journal.':'Sign in to keep your health notes private and synced.';$('authBtn').textContent=signup?'Create account':'Sign in';$('switchAuth').textContent=signup?'I already have an account':'Create account';msg('authMsg','');});
-$('authBtn').addEventListener('click',async()=>{const email=$('email').value.trim(),password=$('password').value;if(!email||password.length<8){msg('authMsg','Enter a valid email and a password with at least 8 characters.');return;}msg('authMsg','Please wait…');let result;if(signup){result=await db.auth.signUp({email,password,options:{data:{display_name:$('displayName').value.trim()}}});}else{result=await db.auth.signInWithPassword({email,password});}if(result.error){msg('authMsg',result.error.message);return;}if(signup&&!result.data.session){msg('authMsg','Account created. Check your email to confirm, then sign in.');return;}msg('authMsg','');});
-async function showSession(session){user=session?.user||null;$('authView').classList.toggle('hidden',!!user);$('appView').classList.toggle('hidden',!user);$('logoutBtn').classList.toggle('hidden',!user);if(user){$('hello').textContent='Hello, '+(user.user_metadata?.display_name||user.email?.split('@')[0]||'there')+'.';await loadHistory();}}
-db.auth.onAuthStateChange((_event,session)=>{showSession(session);});
-const initial=await db.auth.getSession();await showSession(initial.data.session);
-$('logoutBtn').addEventListener('click',async()=>{await db.auth.signOut();});
-async function loadHistory(){if(!user)return;const {data,error}=await db.from('symptom_checkins').select('id,symptom_label,body_region,severity,duration_label,notes,created_at').eq('user_id',user.id).order('created_at',{ascending:false}).limit(50);if(error){msg('historyList','Could not load entries: '+error.message);return;}entries=data||[];$('totalCount').textContent=String(entries.length);$('lastEntry').textContent=entries[0]?new Date(entries[0].created_at).toLocaleDateString():'—';const list=$('historyList');if(!entries.length){list.textContent='No check-ins yet. Your saved entries will appear here.';return;}list.innerHTML='';entries.forEach(e=>{const div=document.createElement('div');div.className='item';const title=document.createElement('strong');title.textContent=e.symptom_label+' · '+e.body_region;const detail=document.createElement('p');detail.className='muted small';detail.textContent=new Date(e.created_at).toLocaleString()+' · Level '+(e.severity??'—')+'/10 · '+(e.duration_label||'');const note=document.createElement('p');note.className='small';note.textContent=e.notes||'';div.append(title,detail,note);list.append(div);});}
-$('saveCheckin').addEventListener('click',async()=>{if(!user)return;const symptom=$('symptom').value,region=$('region').value.trim();if(!symptom||!region){msg('checkinMsg','Choose a symptom and enter the body area.');return;}const payload={user_id:user.id,symptom_label:symptom,body_region:region,severity:Number($('severity').value),duration_label:$('duration').value,notes:$('notes').value.trim()||null};$('saveCheckin').disabled=true;msg('checkinMsg','Saving securely…');const {error}=await db.from('symptom_checkins').insert(payload);$('saveCheckin').disabled=false;if(error){msg('checkinMsg','Could not save: '+error.message);return;}msg('checkinMsg','Saved successfully.');$('symptom').value='';$('region').value='';$('notes').value='';$('severity').value=3;msg('sevValue','3');await loadHistory();setTimeout(()=>tab('history'),500);});
-$('langBtn').addEventListener('click',()=>{language=language==='en'?'bn':'en';$('langBtn').textContent=language==='en'?'বাংলা':'English';document.documentElement.lang=language;document.querySelector('.hero h1').textContent=language==='bn'?'সুস্থতার খেয়াল রাখুন':'A calmer way to track wellbeing';document.querySelector('.hero p').textContent=language==='bn'?'নিজের লক্ষণ লিখে রাখুন এবং নিরাপদ সাধারণ তথ্য দেখুন।':'Notice patterns, keep useful notes, and explore safe, general wellbeing information.';});
-if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+$('level').addEventListener('input',()=>{$('levelText').textContent=$('level').value+'/১০'});
+const areaAdvice={
+'মাথা':['শান্ত, কম আলোযুক্ত জায়গায় কিছুক্ষণ বিশ্রাম নিন। পানি পান করুন। ব্যথা বাড়ায় এমন কাজ থেকে বিরতি নিন; মাথা বা ঘাড়ে জোরে চাপ দেবেন না।','মাথাব্যথার কারণ না জেনে নির্দিষ্ট ওষুধ বেছে নেওয়া নিরাপদ নয়। অভিভাবককে জানান এবং চিকিৎসক/ফার্মাসিস্টের পরামর্শ ছাড়া ওষুধ খাবেন না।'],
+'ঘাড়':['ব্যথা না বাড়লে ধীরে ধীরে আরামদায়কভাবে মাথা ডানে-বামে সামান্য ঘোরাতে পারেন। ঘাড়ে জোরে টান বা মটকানো নয়।','ঘাড়ের ব্যথার জন্য নিজে থেকে ওষুধ শুরু করবেন না। অভিভাবক/চিকিৎসক বা ফার্মাসিস্টের পরামর্শ নিন।'],
+'কাঁধ':['ব্যথামুক্ত সীমার মধ্যে কাঁধ ধীরে সামনে-পেছনে ঘোরান। ভারী জিনিস তোলা বা ব্যথা বাড়ায় এমন নড়াচড়া এড়িয়ে চলুন।','ওষুধের প্রয়োজন হলে বয়স ও স্বাস্থ্য-অবস্থা বিবেচনা করে চিকিৎসক/ফার্মাসিস্টের পরামর্শ নিন।'],
+'হাত':['ব্যথা না বাড়লে আঙুল ধীরে খোলা-বন্ধ করা ও হাত আরাম করে নড়ানো যেতে পারে। আঘাত থাকলে ব্যায়াম করবেন না।','নিজে থেকে ব্যথার ওষুধ খাবেন না; অভিভাবককে জানিয়ে চিকিৎসক/ফার্মাসিস্টের পরামর্শ নিন।'],
+'কবজি':['ব্যথা না বাড়লে আঙুল আলতো নড়ান এবং কবজিকে বিশ্রাম দিন। ভারী কাজ বা ব্যথা বাড়ায় এমন নড়াচড়া বন্ধ রাখুন।','কবজির ব্যথায় ওষুধ বেছে নেওয়ার আগে অভিভাবক ও ফার্মাসিস্ট/চিকিৎসকের সঙ্গে কথা বলুন।'],
+'বুক':['ব্যায়াম করবেন না। বুকের ব্যথাকে অবহেলা করবেন না—বিশেষ করে শ্বাসকষ্ট, ঘাম, মাথা ঘোরা বা দুর্বলতা থাকলে জরুরি সাহায্য নিন।','বুকব্যথার কারণ নিজে অনুমান করে ওষুধ খাবেন না। দ্রুত চিকিৎসা মূল্যায়ন প্রয়োজন হতে পারে।'],
+'পেট':['পেটব্যথার কারণ অনেক রকম হতে পারে। আপাতত বিশ্রাম নিন; ব্যথা থাকলে পেটে চাপ দিয়ে ব্যায়াম করবেন না।','পেটব্যথার জন্য নিজে থেকে ওষুধ বা পেটের ওষুধ খাবেন না। অভিভাবককে জানান এবং চিকিৎসকের পরামর্শ নিন।'],
+'পিঠের ওপরের অংশ':['ব্যথা না বাড়লে আরামদায়ক ভঙ্গিতে বসুন এবং কাঁধ আলতোভাবে নড়ান। ভারী জিনিস তোলা এড়িয়ে চলুন।','ওষুধের বিষয়ে অভিভাবক ও চিকিৎসক/ফার্মাসিস্টের পরামর্শ নিন।'],
+'কোমর / পিঠের নিচের অংশ':['ব্যথা না বাড়লে অল্প সময় ধীরে হাঁটুন ও আরামদায়ক ভঙ্গি বজায় রাখুন। ভারী জিনিস তোলা বা জোরে সামনে ঝোঁকা এড়িয়ে চলুন।','নিজে থেকে ব্যথার ওষুধ খাবেন না। বয়স ও অন্য স্বাস্থ্য-তথ্য অনুযায়ী পরামর্শ নেওয়া জরুরি।'],
+'নিতম্ব':['ব্যথা না বাড়লে স্বাভাবিক হালকা চলাফেরা করুন; দৌড়ানো, লাফানো বা জোরে স্ট্রেচ করা আপাতত এড়িয়ে চলুন।','ওষুধের জন্য অভিভাবক ও চিকিৎসক/ফার্মাসিস্টের পরামর্শ নিন।'],
+'হাঁটু':['ব্যথা না বাড়লে আরামদায়কভাবে বসে বিশ্রাম নিন। দৌড়, লাফ বা স্কোয়াটের মতো চাপের কাজ বন্ধ রাখুন।','হাঁটুর ব্যথায় নিজে থেকে ওষুধ শুরু করবেন না। অভিভাবককে জানান।'],
+'পা':['ব্যথা না বাড়লে বিশ্রাম নিন এবং আরামদায়ক জুতা ব্যবহার করুন। হাঁটতে কষ্ট হলে ব্যায়াম করবেন না।','ওষুধের বিষয়ে চিকিৎসক/ফার্মাসিস্টের পরামর্শ নিন।'],
+'গোড়ালি':['ব্যথা না বাড়লে পায়ে চাপ কমান এবং বিশ্রাম নিন। আঘাত বা ফোলা থাকলে স্ট্রেচ/ব্যায়াম করবেন না।','নিজে থেকে ওষুধ খাবেন না; অভিভাবককে জানিয়ে পরামর্শ নিন।'],
+'অন্যান্য':['ব্যথার জায়গা পরিষ্কারভাবে বোঝা না গেলে নির্দিষ্ট ব্যায়াম করা ঠিক নয়। বিশ্রাম নিন এবং বিশ্বস্ত বড় কাউকে জানান।','কোন ওষুধ উপযুক্ত তা এই অ্যাপ নির্ধারণ করতে পারে না। চিকিৎসক/ফার্মাসিস্টের পরামর্শ নিন।']
+};
+$('showBtn').addEventListener('click',()=>{
+ const a=$('area').value,k=$('kind').value,d=$('duration').value,l=Number($('level').value);
+ if(!a||!k||!d){alert('ব্যথার জায়গা, ধরন এবং সময়—তিনটি অপশন পূরণ করুন।');return;}
+ const advice=areaAdvice[a]||areaAdvice['অন্যান্য'];
+ $('resultTitle').textContent=a+'-এর ব্যথা সম্পর্কে';
+ $('summary').textContent='আপনি নির্বাচন করেছেন: '+a+' · '+k+' · '+d+' · মাত্রা '+l+'/১০। শুধু এই তথ্য দিয়ে ব্যথার কারণ নিশ্চিত করা যায় না।';
+ $('exercise').textContent=advice[0];$('medicine').textContent=advice[1];
+ $('result').classList.add('show');$('result').scrollIntoView({behavior:'smooth',block:'start'});
+});
+$('againBtn').addEventListener('click',()=>{$('result').classList.remove('show');$('form').scrollIntoView({behavior:'smooth'});});
+if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
 </script>
 </body></html>
