@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071d1a"><meta name="description" content="Nexa Health — private symptom journal and evidence-informed wellbeing guidance.">
+<link rel="manifest" href="./manifest.webmanifest"><title>Nexa Health</title>
+<style>
+:root{color-scheme:dark;--bg:#071d1a;--panel:#102b26;--panel2:#15362f;--mint:#8ce6c2;--text:#f0fbf6;--muted:#a7c4b9;--line:#24483e;--danger:#ffb6a8}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#1b5143 0,transparent 45%),var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{max-width:980px;margin:auto;padding:20px 16px 100px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:28px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#9df2cd,#39a982);display:grid;place-items:center;color:#08251d;font-size:24px;font-weight:900}.pill,.secondary,.primary,.tab{border:1px solid var(--line);border-radius:14px;padding:10px 14px;background:var(--panel);color:var(--text)}.primary{background:linear-gradient(135deg,#9af0c9,#4dbb91);color:#06241a;border:0;font-weight:800}.primary:disabled{opacity:.5}.hero{padding:24px;border:1px solid #2b594c;border-radius:26px;background:linear-gradient(135deg,#153d32,#0c2923 70%);margin-bottom:18px}.eyebrow{color:var(--mint);font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.hero h1{font-size:clamp(28px,6vw,44px);line-height:1.1;margin:8px 0}.hero p,.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:18px;margin-bottom:14px}.card h2,.card h3{margin:0 0 10px}.field{display:grid;gap:6px;margin:12px 0}.field label{font-size:13px;color:var(--muted)}input,select,textarea{width:100%;padding:13px;border-radius:13px;border:1px solid var(--line);background:#081f1b;color:var(--text);outline:none}textarea{min-height:90px;resize:vertical}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.tabs{display:flex;gap:8px;overflow:auto;margin:18px 0}.tab.active{background:#245b49;border-color:#5bc59a;color:white}.hidden{display:none!important}.notice{border-left:3px solid var(--mint);background:#0d2923;padding:12px 14px;border-radius:10px;color:var(--muted);font-size:13px;margin:14px 0}.alert{border-left:3px solid var(--danger);background:#321e1c;padding:13px;border-radius:10px;color:#ffe2dc;font-size:13px;margin:14px 0}.stat{font-size:28px;font-weight:800;color:var(--mint)}.item{padding:12px 0;border-bottom:1px solid var(--line)}.item:last-child{border:0}.tag{display:inline-block;background:#1d493c;color:var(--mint);border-radius:99px;padding:4px 9px;font-size:12px}.foot{font-size:12px;color:var(--muted);text-align:center;margin-top:25px}.auth{max-width:460px;margin:5vh auto}.small{font-size:12px}.good{color:var(--mint)}@media(max-width:650px){.grid{grid-template-columns:1fr}.wrap{padding:14px 13px 90px}.hero{padding:20px}.top{margin-bottom:18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand"><div class="logo">✚</div><div>NEXA <span class="good">HEALTH</span><div class="small muted">Your wellbeing companion</div></div></div><div class="actions"><button class="pill" id="langBtn">বাংলা</button><button class="pill hidden" id="logoutBtn">Sign out</button></div></header>
+<section id="authView" class="auth card">
+<div class="eyebrow">PRIVATE HEALTH JOURNAL</div><h1 id="authTitle">Welcome back</h1><p class="muted" id="authSub">Sign in to keep your health notes private and synced.</p>
+<div class="field"><label>Email</label><input id="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+<div class="field"><label>Password</label><input id="password" type="password" autocomplete="current-password" minlength="8" placeholder="Your password"></div>
+<div class="field hidden" id="nameField"><label>Display name</label><input id="displayName" maxlength="80" placeholder="Your name"></div>
+<div class="actions"><button class="primary" id="authBtn">Sign in</button><button class="secondary" id="switchAuth">Create account</button></div>
+<p class="small muted" id="authMsg" role="status"></p>
+<div class="notice">Your notes are tied to your signed-in account. Use a unique password and never share it.</div>
+</section>
+<main id="appView" class="hidden">
+<section class="hero"><div class="eyebrow">A calmer way to track wellbeing</div><h1 id="hello">Hello there.</h1><p>Notice patterns, keep useful notes, and explore safe, general wellbeing information.</p><div class="actions"><button class="primary" data-tab="checkin">＋ New check-in</button><button class="secondary" data-tab="history">View history</button></div></section>
+<div class="alert"><strong>Important:</strong> Nexa Health does not diagnose conditions or replace a clinician. If symptoms are severe, sudden, rapidly worsening, or feel like an emergency, seek urgent medical help now.</div>
+<nav class="tabs"><button class="tab active" data-tab="home">Overview</button><button class="tab" data-tab="checkin">Check-in</button><button class="tab" data-tab="history">My history</button><button class="tab" data-tab="guidance">Wellbeing guide</button></nav>
+<section id="homePanel">
+<div class="grid"><div class="card"><div class="eyebrow">YOUR JOURNAL</div><div class="stat" id="totalCount">0</div><div class="muted">Saved check-ins</div></div><div class="card"><div class="eyebrow">LAST ENTRY</div><div class="stat" id="lastEntry">—</div><div class="muted">Keep notes over time</div></div></div>
+<div class="card"><h2>Start with what you notice</h2><p class="muted">Record a symptom, where you notice it, how strong it feels, and how long it has been happening. A journal can help you explain changes to a healthcare professional.</p><button class="primary" data-tab="checkin">Create a check-in</button></div>
+</section>
+<section id="checkinPanel" class="hidden">
+<div class="card"><h2>New symptom check-in</h2><p class="muted">This is a record, not a diagnosis.</p>
+<div class="field"><label>What are you noticing?</label><select id="symptom"><option value="">Choose a symptom</option><option>Headache</option><option>Stomach discomfort</option><option>Back discomfort</option><option>Joint discomfort</option><option>Muscle soreness</option><option>Cough</option><option>Feverish feeling</option><option>Fatigue</option><option>Other</option></select></div>
+<div class="field"><label>Where do you notice it?</label><input id="region" maxlength="80" placeholder="e.g. forehead, lower back, stomach"></div>
+<div class="field"><label>How strong does it feel? (0–10)</label><input id="severity" type="range" min="0" max="10" value="3"><div class="muted">Level: <strong id="sevValue">3</strong>/10</div></div>
+<div class="field"><label>How long?</label><select id="duration"><option>Just started</option><option>A few hours</option><option>1–2 days</option><option>3–7 days</option><option>More than a week</option><option>Comes and goes</option></select></div>
+<div class="field"><label>Anything else you want to note? (optional)</label><textarea id="notes" maxlength="2000" placeholder="What were you doing? What seems to make it better or worse?"></textarea></div>
+<div class="actions"><button class="primary" id="saveCheckin">Save check-in</button><button class="secondary" data-tab="home">Cancel</button></div><p class="small muted" id="checkinMsg" role="status"></p></div>
+</section>
+<section id="historyPanel" class="hidden"><div class="card"><h2>My check-ins</h2><div id="historyList" class="muted">Loading…</div></div></section>
+<section id="guidancePanel" class="hidden">
+<div class="card"><div class="eyebrow">GENERAL WELLBEING</div><h2>Small supportive steps</h2>
+<div class="item"><strong>Pause and observe</strong><p class="muted">Write down when a symptom began, what it feels like, and any changes. Avoid assuming a cause from one symptom.</p></div>
+<div class="item"><strong>Rest and hydration</strong><p class="muted">For everyday tiredness or mild discomfort, consider taking a comfortable break and drinking water if you can. Follow any advice already given by your clinician.</p></div>
+<div class="item"><strong>Gentle movement</strong><p class="muted">Only if it feels comfortable: try ordinary, gentle movement. Stop if it increases discomfort, causes dizziness, or feels unsafe. Do not push through pain.</p></div>
+<div class="item"><strong>Prepare for an appointment</strong><p class="muted">Bring your timeline, medicines/supplements list, relevant health history, and questions. A qualified clinician can assess your individual situation.</p></div>
+<div class="alert"><strong>Get urgent help</strong><br>Seek emergency assessment for trouble breathing, chest pain, fainting, new confusion, sudden severe headache, severe allergic reaction, major injury, or any rapidly worsening/severe symptom. This list is not exhaustive.</div>
+<p class="small muted">Information is general education, not personalized medical advice. No medication or treatment is prescribed by this app.</p>
+</div></section>
+</main>
+<footer class="foot">Nexa Health · Private journal · General information only</footer>
+</div>
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+const SUPABASE_URL='https://uvtlvbooesvqykzdkrww.supabase.co';
+const SUPABASE_KEY='sb_publishable_MTYUkq4KwgRoyvDmBeeu6Q_EKU2EFTU';
+const db=createClient(SUPABASE_URL,SUPABASE_KEY);
+const $=id=>document.getElementById(id);
+let user=null,signup=false,language='en',entries=[];
+const msg=(id,t)=>$(id).textContent=t;
+function tab(name){['home','checkin','history','guidance'].forEach(x=>$(x+'Panel').classList.toggle('hidden',x!==name));document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.classList.contains('tab')&&b.dataset.tab===name));if(name==='history')loadHistory();}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>tab(b.dataset.tab)));
+$('severity').addEventListener('input',()=>msg('sevValue',$('severity').value));
+$('switchAuth').addEventListener('click',()=>{signup=!signup;$('nameField').classList.toggle('hidden',!signup);$('authTitle').textContent=signup?'Create your account':'Welcome back';$('authSub').textContent=signup?'Create a private account for your journal.':'Sign in to keep your health notes private and synced.';$('authBtn').textContent=signup?'Create account':'Sign in';$('switchAuth').textContent=signup?'I already have an account':'Create account';msg('authMsg','');});
+$('authBtn').addEventListener('click',async()=>{const email=$('email').value.trim(),password=$('password').value;if(!email||password.length<8){msg('authMsg','Enter a valid email and a password with at least 8 characters.');return;}msg('authMsg','Please wait…');let result;if(signup){result=await db.auth.signUp({email,password,options:{data:{display_name:$('displayName').value.trim()}}});}else{result=await db.auth.signInWithPassword({email,password});}if(result.error){msg('authMsg',result.error.message);return;}if(signup&&!result.data.session){msg('authMsg','Account created. Check your email to confirm, then sign in.');return;}msg('authMsg','');});
+async function showSession(session){user=session?.user||null;$('authView').classList.toggle('hidden',!!user);$('appView').classList.toggle('hidden',!user);$('logoutBtn').classList.toggle('hidden',!user);if(user){$('hello').textContent='Hello, '+(user.user_metadata?.display_name||user.email?.split('@')[0]||'there')+'.';await loadHistory();}}
+db.auth.onAuthStateChange((_event,session)=>{showSession(session);});
+const initial=await db.auth.getSession();await showSession(initial.data.session);
+$('logoutBtn').addEventListener('click',async()=>{await db.auth.signOut();});
+async function loadHistory(){if(!user)return;const {data,error}=await db.from('symptom_checkins').select('id,symptom_label,body_region,severity,duration_label,notes,created_at').eq('user_id',user.id).order('created_at',{ascending:false}).limit(50);if(error){msg('historyList','Could not load entries: '+error.message);return;}entries=data||[];$('totalCount').textContent=String(entries.length);$('lastEntry').textContent=entries[0]?new Date(entries[0].created_at).toLocaleDateString():'—';const list=$('historyList');if(!entries.length){list.textContent='No check-ins yet. Your saved entries will appear here.';return;}list.innerHTML='';entries.forEach(e=>{const div=document.createElement('div');div.className='item';const title=document.createElement('strong');title.textContent=e.symptom_label+' · '+e.body_region;const detail=document.createElement('p');detail.className='muted small';detail.textContent=new Date(e.created_at).toLocaleString()+' · Level '+(e.severity??'—')+'/10 · '+(e.duration_label||'');const note=document.createElement('p');note.className='small';note.textContent=e.notes||'';div.append(title,detail,note);list.append(div);});}
+$('saveCheckin').addEventListener('click',async()=>{if(!user)return;const symptom=$('symptom').value,region=$('region').value.trim();if(!symptom||!region){msg('checkinMsg','Choose a symptom and enter the body area.');return;}const payload={user_id:user.id,symptom_label:symptom,body_region:region,severity:Number($('severity').value),duration_label:$('duration').value,notes:$('notes').value.trim()||null};$('saveCheckin').disabled=true;msg('checkinMsg','Saving securely…');const {error}=await db.from('symptom_checkins').insert(payload);$('saveCheckin').disabled=false;if(error){msg('checkinMsg','Could not save: '+error.message);return;}msg('checkinMsg','Saved successfully.');$('symptom').value='';$('region').value='';$('notes').value='';$('severity').value=3;msg('sevValue','3');await loadHistory();setTimeout(()=>tab('history'),500);});
+$('langBtn').addEventListener('click',()=>{language=language==='en'?'bn':'en';$('langBtn').textContent=language==='en'?'বাংলা':'English';document.documentElement.lang=language;document.querySelector('.hero h1').textContent=language==='bn'?'সুস্থতার খেয়াল রাখুন':'A calmer way to track wellbeing';document.querySelector('.hero p').textContent=language==='bn'?'নিজের লক্ষণ লিখে রাখুন এবং নিরাপদ সাধারণ তথ্য দেখুন।':'Notice patterns, keep useful notes, and explore safe, general wellbeing information.';});
+if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+</script>
+</body></html>

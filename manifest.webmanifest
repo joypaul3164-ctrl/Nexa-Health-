@@ -1,0 +1,10 @@
+{
+  "name": "Nexa Health",
+  "short_name": "Nexa",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#071d1a",
+  "theme_color": "#071d1a",
+  "description": "Private symptom journal and general wellbeing guidance",
+  "icons": []
+}
